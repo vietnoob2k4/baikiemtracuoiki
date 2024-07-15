@@ -1,16 +1,17 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, ImageBackground } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Sử dụng FontAwesome hoặc thay đổi thành thư viện icon mong muốn
 
 const SignInScreen = ({ navigation }) => {
   const handleSignIn = () => {
-    // Logic to handle sign in action
+    // Xử lý logic đăng nhập
   };
 
   return (
     <View style={styles.container}>
       {/* Background */}
       <ImageBackground
-        
+        source={require('../assets/picture-a-captivating-scene-of-a-tranquil-lake-at-sunset-ai-generative-photo.jpg')}
         style={styles.background}
         resizeMode="cover"
       >
@@ -23,10 +24,12 @@ const SignInScreen = ({ navigation }) => {
             
             {/* Social Media Buttons */}
             <TouchableOpacity style={styles.facebookButton}>
+              <Icon name="facebook" size={24} color="#FCFCFC" style={styles.buttonIcon} />
               <Text style={styles.buttonText}>Continue with Facebook</Text>
             </TouchableOpacity>
             
             <TouchableOpacity style={styles.googleButton}>
+              <Icon name="google" size={24} color="#FCFCFC" style={styles.buttonIcon} />
               <Text style={styles.buttonText}>Continue with Google</Text>
             </TouchableOpacity>
 
@@ -55,8 +58,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   mainContent: {
+    flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
+    marginBottom: 50, // Có thể điều chỉnh khoảng cách tùy ý
   },
   title: {
     fontFamily: 'Gilroy',
@@ -74,6 +79,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
+    flexDirection: 'row', // Đảm bảo icon và text nằm cùng hàng
   },
   googleButton: {
     width: 364,
@@ -83,6 +89,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 20,
+    flexDirection: 'row', // Đảm bảo icon và text nằm cùng hàng
   },
   buttonText: {
     fontFamily: 'Gilroy',
@@ -90,6 +97,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: '#FCFCFC',
     textAlign: 'center',
+    marginLeft: 10, // Khoảng cách giữa icon và text
   },
   additionalText: {
     fontFamily: 'Gilroy',
@@ -97,6 +105,9 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#828282',
     textAlign: 'center',
+  },
+  buttonIcon: {
+    marginRight: 10, // Khoảng cách giữa icon và text
   },
 });
 
